@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +8,137 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="header-logo">
-            <img src="./imgs/logo.png" alt="logo">
+    <header class="deskNav">
+        <div class="logo">
+            <img src="/imgs/logoGustave.svg" alt="logo">
         </div>
-        <div>
-            <h2 class="header-h2">les vacances</h2>
-            <h1>Ches Gustave</h1>
-            <hr class="header-hr">
-        </div>
-        <div class="nav">
-            <h3>Accueil</h3>
-            <hr class="nav-hr">
-            <h3>Rechercher</h3>
-            <hr class="nav-hr">
-            <h3>Profil</h3>
-        </div>
-        <div class="header-user">
-            
+        <div class="iconNav">
+            <img src="/svg/person-circle-outline.svg" alt="icon profil">
+            <img src="/svg/menu-outline.svg" alt="icon menu">
         </div>
     </header>
     <main>
-
+    <section class="main-img">
+        <form class="search-bar">
+                    <div class="column q1">
+                        <label for="where">Où aller-vous ?</label>
+                        <input type="text">
+                    </div>
+                    <div class="column depart">
+                        <label for="departure">Départ</label>
+                        <input type="date">
+                    </div>
+                    <div class="column arrival">
+                        <label for="arrival">Arrivé</label>
+                        <input type="date">
+                    </div>
+                    <div class="column">
+                        <label for="adult">Adultes</label>
+                        <input type="number">
+                    </div>
+                    <div class="column">
+                        <label for="children">Enfants</label>
+                        <input type="number">
+                    </div>
+                    <div class="column">
+                        <label for="bedroom">Chambres</label>
+                        <input type="number">
+                    </div>
+                    <button><img src="/svg/search-outline.svg" alt="icon search"></button>
+                </form>
+    </section>
+        <section class="section-city">
+            <div>
+                <h2>Voyagez en France</h2>
+                <h4>Pourquoi pas ici ?</h4>
+            </div>
+            
+            <div class="city">
+                <div class="city-card">
+                    <img src="./imgs/paris.jpg" alt="paris">
+                    <div>
+                        <h5 class="city-name">Paris</h5>
+                        <hr class="gold-city">
+                    </div>
+                </div>
+                <div class="city-card">
+                    <img src="./imgs/marseille.jpg" alt="marseille">
+                    <div>
+                        <h5 class="city-name">Marseille</h5>
+                        <hr class="gold-city">
+                    </div>
+                </div>
+                <div class="city-card">
+                    <img src="./imgs/bordeaux.jpg" alt="bordeaux">
+                    <div>
+                        <h5 class="city-name">Bordeaux</h5>
+                        <hr class="gold-city">
+                    </div>
+                </div>
+                <div class="city-card">
+                    <img src="./imgs/lille.jpg" alt="lille">
+                    <div>
+                        <h5 class="city-name">Lille</h5>
+                        <hr class="gold-city">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section-star">
+            <div>
+                <h2>Laissez vous tentez par nos coups de coeur</h2>
+                <h4>Nos locations les mieux notées</h4>
+            </div>
+            
+            <div class="star-location">
+                <div class="star-card">
+                    <img src="./imgs/star-1.jpg" alt="best-location-1">
+                    <div>
+                        <hr class="gold-star">
+                        <h5>Découvrir</h5>
+                
+                    </div>
+                </div>
+                <div class="star-card">
+                    <img src="./imgs/star-2.jpg" alt="best-location-2">
+                    <div>
+                        <hr class="gold-star">
+                        <h5>Découvrir</h5>
+                
+                    </div>
+                </div>
+                <div class="star-card">
+                    <img src="./imgs/star-3.jpg" alt="best-location-3">
+                    <div>
+                        <hr class="gold-star">
+                        <h5>Découvrir</h5>
+                
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        
     </main>
+    <footer>
+        <div>
+            <div class="footer-link">
+                <p><a href="#">Termes & conditions</a></p>
+                <hr class="footer-hr-long">
+            </div>
+            <div class="footer-link">
+                <p><a href="#">Privacy policy</a></p>
+                <hr>
+            </div>
+            <div class="footer-link">
+                <p><a href="#">Cookie policy </a></p>
+                <hr>
+            </div> 
+        </div>
+        
+        <p class="footer-left">© 2022 All rights reserved.</p>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>

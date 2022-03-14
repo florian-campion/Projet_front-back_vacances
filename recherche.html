@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>les vacances chez Gustave</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="deskNav">
+        <div class="logo">
+            <img src="/imgs/logoGustave.svg" alt="logo">
+        </div>
+        <div class="iconNav">
+            <img src="/svg/person-circle-outline.svg" alt="icon profil">
+            <img src="/svg/menu-outline.svg" alt="icon menu">
+        </div>
+    </header>
+        <main>
+            <section class="search">
+                <form class="search-bar">
+                    <div class="column q1">
+                        <label for="where">Où aller-vous ?</label>
+                        <input type="text">
+                    </div>
+                    <div class="column depart">
+                        <label for="departure">Départ</label>
+                        <input type="date">
+                    </div>
+                    <div class="column arrival">
+                        <label for="arrival">Arrivé</label>
+                        <input type="date">
+                    </div>
+                    <div class="column">
+                        <label for="adult">Adultes</label>
+                        <input type="number">
+                    </div>
+                    <div class="column">
+                        <label for="children">Enfants</label>
+                        <input type="number">
+                    </div>
+                    <div class="column">
+                        <label for="bedroom">Chambres</label>
+                        <input type="number">
+                    </div>
+                    <button><img src="/svg/search-outline.svg" alt="icon search"></button>
+                </form>
+            </section>
+
+            <section class="houseSearch">
+                <div class="categories">
+                    <h3>Prix</h3>
+                    <label for="progressPrice">0</label>
+                    <div class="progressPrice" role="progressbar" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="0"></div>
+                    <input type="range" value="0" min="0" max="20000">
+                    <h3>Personnes</h3>
+                    <label for="progressPrice">0</label>
+                    <div class="progressPrice" role="progressbar" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="0"></div>
+                    <input type="range" value="0" min="0" max="20">
+                    <h3>Equipements</h3>
+                    <div class="checkbox">
+                        <p>Piscine</p>
+                        <input type="checkbox">
+                    </div>
+                    <div class="checkbox">
+                        <p>Jardin</p>
+                        <input type="checkbox">
+                    </div>
+                    <div class="checkbox">
+                        <p>Spa</p>
+                        <input type="checkbox">
+                    </div>
+                    <div class="checkbox">
+                        <p>Jacuzzi</p>
+                        <input type="checkbox">
+                    </div>
+                </div>
+            </section>
+        </main>
+</body>
+</html>
