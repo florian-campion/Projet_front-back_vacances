@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 100vw;
     height: 120px;
 }
 
@@ -126,7 +126,7 @@ main{
 }
 
 main h2 {
-    font-family:"Glamore";
+    font-family:'Glamore';
 }
 
 .main-img {
@@ -141,7 +141,13 @@ main h2 {
 
 .section-city h2, .section-star h2 {
     margin-top: 50px;
+    font-family:'Glamore';
 }
+
+.section-city h5, .section-star h5 {
+    font-family:'Glamore';
+}
+
 
 .section-city h4,.section-star h4 {
     margin-top: 5px;
@@ -169,11 +175,22 @@ main h2 {
     margin: 25px;
 }
 
-.city-card hr {
+
+
+.gold-city {
     border: none;
     background-color: #DCB253;
     width: 50px;
     height: 3px;
+    margin-top: 5px;
+}
+
+.gold-city-long {
+    width: 80px;
+    border: none;
+    background-color: #DCB253;
+    height: 3px;
+    margin-top: 5px;
 }
 
 .city-card div {
@@ -214,7 +231,7 @@ main h2 {
 /* footer */
 
 footer {
-    height: 70px;
+    height: 10vh;
     width: 100%;
     background-color: #F1F1F1;
     display: flex;
@@ -252,21 +269,69 @@ footer hr {
     gap: 5px;
 }
 
+/* Produit */
 
-/* Page recherche */
 
-.categories {
+
+.main-produit {
     display: flex;
-    flex-direction: column;
-    height: 600px;
-    width: 320px;
-    border: 1px solid var(--colorPrincipal);
-    border-radius: 5px;
-    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    height: 73vh;
 }
 
-.checkbox {
+.fiche{
+    border: #DCB253 1px solid;
+    border-radius: 2%;
+    padding: 25px;
+    
+    font-weight: 100%;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    gap:40px;
+}
+
+.fiche>* {
+    margin-left: 30px;
+}
+
+.details {
+    display: flex;
+    gap: 100px;
+}
+.details p {
+    margin-top: 5px;
+}
+
+.nb-personne {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nb-personne img{
+    height: 30px;
+    height: 30px;
+}
+
+.fiche>p {
+    width: 80%;
+}
+
+.fiche-end {
+    display: flex;
+    gap: 50px;
+}
+
+.fiche-price {
+    font-size: 25px;
+}
+
+.btn-reservation {
+    width: 160px;
+    height: 50px;
+    color:#F1F1F1;
+    font-size: 20px;
 }
