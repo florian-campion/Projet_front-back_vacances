@@ -1,7 +1,7 @@
-const APISTRAPI = 'http://localhost:1337/api/catalogues/1?populate=*'
+const APISTRAPI = 'http://localhost:1337/api/catalogues?populate=*'
 
-async function catalogue (catalogues) {
-    const response = await fetch(`${APISTRAPIcatalogues}`)
+async function catalogue () {
+    const response = await fetch(`${APISTRAPI}`)
     const data = await response.json();
     console.log(data);
 };

@@ -10,6 +10,11 @@
     --colorPrincipal: #DCB253;
 }
 
+/* hidden mobile */
+.mobNav {
+    display: none;
+}
+
 .flex {
     display: flex;
 }
@@ -166,7 +171,7 @@
 
 /* Search */
 .search-bar {
-    width: 80%;
+    width: 70%;
     height: 100px;
     background-color: #FFF;
     justify-content: space-between;
@@ -184,7 +189,7 @@
 .column:nth-child(4) input,
 .column:nth-child(5) input,
 .column:nth-child(6) input{
-    max-width: 66%;
+    max-width: 60%;
 }
 
 .search-bar input {
@@ -262,6 +267,7 @@ main h2 {
 .section-city h4,.section-star h4 {
     margin-top: 5px;
     font-weight: 400;
+    font-size: 24px;
 }
 
 .section-city h2, .section-city h4, .section-star h2, .section-star h4 {
@@ -272,6 +278,8 @@ main h2 {
     margin-top: 40px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 40vh;
 
 }
 
@@ -309,11 +317,12 @@ main h2 {
 }
 
 .star-card img {
-    height: 250px;
-    width: auto;
+    height: 422px;
+    width: 350px;
     background-size: contain;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
+    background-repeat: no-repeat;
 }
 
 .star-card {
@@ -496,7 +505,7 @@ footer hr {
     border: #DCB253 1px solid;
     border-radius: 5px;
     width: 900px;
-    height: 600px;
+    
     padding: 25px;
     
 }
@@ -505,7 +514,6 @@ footer hr {
     float: right;
     height: 45px;
     width: 45px;
-    
 }
 
 .booking h2 {
@@ -528,6 +536,8 @@ footer hr {
 
 .select-booking {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -539,6 +549,8 @@ footer hr {
     width: 20px;
     text-align: center;
 }
+
+
 
 
 
@@ -837,4 +849,41 @@ textarea.formError, input.formError {
 	box-shadow: 0px 0px 13px 4px rgba(0, 0, 0, 0.14);
 	background: #DCB253;
 	color: white;
+}
+
+/* Remerciement */
+
+.remerciement {
+    border: #DCB253 2px solid;
+    border-radius: 5px;
+    padding: 25px;
+    height: 120px;
+    width: 450px;
+}
+
+.thank-close {
+    height: 20px;
+    width: 20px;
+
+    float: right;
+}
+
+.remerciement p {
+    font-size: 30px;
+    text-align: center;
+    color: #DCB253;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+    .deskNav {
+        display: none;
+    }
+    .mobNav {
+        display: flex;
+        width: 100%;
+        height: 70px;
+    }
 }
