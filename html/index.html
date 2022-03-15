@@ -5,20 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>les vacances chez Gustave</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <header class="deskNav">
         <div class="logo">
-            <img src="/imgs/logoGustave.svg" alt="logo">
+            <img src="/img/logoGustave.svg" alt="logo">
         </div>
         <div class="iconNav">
             <img src="/svg/person-circle-outline.svg" alt="icon profil">
             <img src="/svg/menu-outline.svg" alt="icon menu">
         </div>
+        <nav class="menuDesk">
+            <ul class="menu">
+                <li><a href="">Accueil</a></li>
+                <li><a href="">Recherche</a></li>
+                <li><a href="">Profil</a></li>
+            </ul>
+        </nav>
     </header>
+    
     <main>
     <section class="main-img">
+        <form action="" method="post" class="formDesk">
+            <h1>Les Vacances de gustave</h1>
+            <label for="">Adress email
+            <input type="email">
+            </label>
+            <label for="">Mot de passe
+            <input type="password">
+            </label>
+            <button type="submit" class="connex">Connexion</button>
+        </form>
         <form class="search-bar">
                     <div class="column q1">
                         <label for="where">Où aller-vous ?</label>
@@ -55,28 +73,28 @@
             
             <div class="city">
                 <div class="city-card">
-                    <img src="./imgs/paris.jpg" alt="paris">
+                    <img src="/img/paris.jpg" alt="paris">
                     <div>
                         <h5 class="city-name">Paris</h5>
                         <hr class="gold-city">
                     </div>
                 </div>
                 <div class="city-card">
-                    <img src="./imgs/marseille.jpg" alt="marseille">
+                    <img src="/img/marseille.jpg" alt="marseille">
                     <div>
                         <h5 class="city-name">Marseille</h5>
                         <hr class="gold-city-long">
                     </div>
                 </div>
                 <div class="city-card">
-                    <img src="./imgs/bordeaux.jpg" alt="bordeaux">
+                    <img src="/img/bordeaux.jpg" alt="bordeaux">
                     <div>
                         <h5 class="city-name">Bordeaux</h5>
                         <hr class="gold-city-long">
                     </div>
                 </div>
                 <div class="city-card">
-                    <img src="./imgs/lille.jpg" alt="lille">
+                    <img src="/img/lille.jpg" alt="lille">
                     <div>
                         <h5 class="city-name">Lille</h5>
                         <hr class="gold-city">
@@ -92,7 +110,7 @@
             
             <div class="star-location">
                 <div class="star-card">
-                    <img src="./imgs/star-1.jpg" alt="best-location-1">
+                    <img src="/img/luxuryHouse1.jpg" alt="best-location-1">
                     <div>
                         <hr class="gold-star">
                         <h5>Découvrir</h5>
@@ -100,7 +118,7 @@
                     </div>
                 </div>
                 <div class="star-card">
-                    <img src="./imgs/star-2.jpg" alt="best-location-2">
+                    <img src="/img/luxuryHouse2.jpg" alt="best-location-2">
                     <div>
                         <hr class="gold-star">
                         <h5>Découvrir</h5>
@@ -108,14 +126,13 @@
                     </div>
                 </div>
                 <div class="star-card">
-                    <img src="./imgs/star-3.jpg" alt="best-location-3">
+                    <img src="/img/luxuryHouse3.jpg" alt="best-location-3">
                     <div>
                         <hr class="gold-star">
                         <h5>Découvrir</h5>
                 
                     </div>
                 </div>
-                
             </div>
         </section>
         
@@ -140,6 +157,6 @@
 
     </footer>
 
-    <script src="script.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
