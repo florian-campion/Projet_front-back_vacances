@@ -11,12 +11,20 @@
 <body>
     <header class="deskNav">
         <div class="logo">
-            <img src="/imgs/logoGustave.svg" alt="logo">
+            <img src="/img/logoGustave.svg" alt="logo">
         </div>
         <div class="iconNav">
-            <img src="/svg/person-circle-outline.svg" alt="icon profil">
-            <img src="/svg/menu-outline.svg" alt="icon menu">
+            <img id="buttonProfil" src="/svg/person-circle-outline.svg" alt="icon profil">
+            <img id="buttonMenu" src="/svg/menu-outline.svg" alt="icon menu">
         </div>
+        <nav class="menuDesk">
+            <ul class="menu">
+                <li><a href="/html/index.html">Accueil</a></li>
+                <li><a href="/html/recherche.html">Recherche</a></li>
+                <li><a href="/html/administrateur.html">Administrateurs</a></li>
+                <li><a href="/html/profil.html">Profil</a></li>
+            </ul>
+        </nav>
     </header>
         <main>
             <section class="search">
@@ -49,7 +57,7 @@
                 </form>
             </section>
 
-            <section class="houseSearch">
+            <section class="houseSearch"> 
 
                 <div class="categories">
                     <div class="price">
@@ -58,7 +66,6 @@
                         <div class="progressPrice" role="progressbar" aria-valuemin="0" aria-valuemax="20000" aria-valuenow="0"></div>
                         <input type="range" value="0" min="0" max="20000">
                     </div>
-
                     <div class="people">
                         <h3>Personnes</h3>
                         <label for="progressPrice">0</label>
@@ -88,61 +95,7 @@
                 </div>
 
                 <div class="blockHouse">
-                    <div class="newHouse">
-                        <img src="./img/travel1.jpg" alt="voyage">
-                        <div class="description">
-                            <div class="dColumn">
-                                <h5>Belle Epoque</h5>
-                                <p>Le faste des Rois. Joséphine de Beauharnais y a résidé</p>
-                            </div>
-                            <div class="dColumn">
-                                <p class="price">3000€ <br> <span>/ semaine</span></p>
-                                <p>4 pers</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="newHouse">
-                        <img src="./img/travel1.jpg" alt="voyage">
-                        <div class="description">
-                            <div class="dColumn">
-                                <h5>Belle Epoque</h5>
-                                <p>Le faste des Rois. Joséphine de Beauharnais y a résidé</p>
-                            </div>
-                            <div class="dColumn">
-                                <p class="price">3000€ <br> <span>/ semaine</span></p>
-                                <p>4 pers</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="newHouse">
-                        <img src="./img/travel1.jpg" alt="voyage">
-                        <div class="description">
-                            <div class="dColumn">
-                                <h5>Belle Epoque</h5>
-                                <p>Le faste des Rois. Joséphine de Beauharnais y a résidé</p>
-                            </div>
-                            <div class="dColumn">
-                                <p class="price">3000€ <br> <span>/ semaine</span></p>
-                                <p>4 pers</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="newHouse">
-                        <img src="./img/travel1.jpg" alt="voyage">
-                        <div class="description">
-                            <div class="dColumn">
-                                <h5>Belle Epoque</h5>
-                                <p>Le faste des Rois. Joséphine de Beauharnais y a résidé</p>
-                            </div>
-                            <div class="dColumn">
-                                <p class="price">3000€ <br> <span>/ semaine</span></p>
-                                <p>4 pers</p>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </section>
         </main>
@@ -165,5 +118,7 @@
             <p class="footer-left">© 2022 All rights reserved.</p>
     
         </footer>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>

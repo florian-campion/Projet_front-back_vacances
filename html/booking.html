@@ -6,22 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>les vacances chez Gustave</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/booking.css">
 </head>
 <body >
     <main class="body-form">
         <section class="container-form">
             <form class="booking">
-                <img  class="close" src="/svg/close-outline.svg" alt="close">
+                <img  class="close" id="close" src="/svg/close-outline.svg" alt="close">
                 <h2 class="glamore form-h2">Réservation</h2>
                 <div class="container-booking">
-                    <div>
-    
+                    <div class="thanks">
+                        <div class="remerciement">
+                            <img  class="thank-close" src="/svg/close-outline.svg" alt="close">
+                            <p class="glamore">Merci de votre réservation</p>
+                        </div>
                     </div>
                     <div class="container-calendar">
                         <!-- calendar -->
                         <!-- <link href="https://fonts.googleapis.com/css?family=Baloo|Ubuntu" rel="stylesheet"> -->
     
-                        <div id="calender-wrapper">
+                        <!-- <div id="calender-wrapper">
                             <div id="calender-title" class="disable-select flex row center-v around">
                                 <div id="left" class="flex row center-vh"><span></span></div>
                                 <p class="flex row center-vh"></p>
@@ -92,7 +96,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+                    <div id="demo-booking-multiple"></div>
                     <div class="booking-details">
                         <h3 class="glamore">Belle Epoque</h3>
                         <div class="select-booking">
@@ -119,9 +124,6 @@
             </form>
         </section>
     </main>
-    
-
-
 
         <div class="remerciement">
             <img  class="thank-close" src="/svg/close-outline.svg" alt="close">
@@ -129,7 +131,8 @@
         </div>
     
     
-
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+    <script src="/js/jquery.js"></script>
     <script src="/js/script.js"></script>
 </body>
 </html>

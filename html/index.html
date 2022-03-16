@@ -13,14 +13,15 @@
             <img src="/img/logoGustave.svg" alt="logo">
         </div>
         <div class="iconNav">
-            <img src="/svg/person-circle-outline.svg" alt="icon profil">
-            <img src="/svg/menu-outline.svg" alt="icon menu">
+            <img id="buttonProfil" src="/svg/person-circle-outline.svg" alt="icon profil">
+            <img id="buttonMenu" src="/svg/menu-outline.svg" alt="icon menu">
         </div>
         <nav class="menuDesk">
             <ul class="menu">
-                <li><a href="">Accueil</a></li>
-                <li><a href="">Recherche</a></li>
-                <li><a href="">Profil</a></li>
+                <li><a href="/html/index.html">Accueil</a></li>
+                <li><a href="/html/recherche.html">Recherche</a></li>
+                <li><a href="/html/administrateur.html">Administrateurs</a></li>
+                <li><a href="/html/profil.html">Profil</a></li>
             </ul>
         </nav>
     </header>
@@ -36,22 +37,26 @@
     </header>
 
     <main>
-    <section class="main-img">
-        <form action="" method="post" class="formDesk">
-            <h1>Les Vacances de gustave</h1>
-            <label for="">Adress email
-            <input type="email">
-            </label>
-            <label for="">Mot de passe
-            <input type="password">
-            </label>
-            <button type="submit" class="connex">Connexion</button>
-        </form>
-        <form class="search-bar">
-                    <div class="column q1">
-                        <label for="where">Où aller-vous ?</label>
-                        <input type="text">
-                    </div>
+        <div class="absolute">
+            <form action="/html/profil.html" class="formDesk">
+                <div>
+                    <h1>Les Vacances de gustave</h1>
+                    <label for="">Adress email
+                    <input type="email" id="identifier">
+                    </label>
+                    <label for="">Mot de passe
+                    <input type="password" id="password">
+                    </label>
+                    <button type="submit" class="connex">Connexion</button>
+                </div>
+            </form>
+        </div>
+        <section class="main-img">
+            <form class="search-bar">
+                <div class="column q1">
+                    <label for="where">Où aller-vous ?</label>
+                    <input type="text">
+                </div>
                     <div class="column depart">
                         <label for="departure">Arrivé</label>
                         <input type="date">
@@ -74,8 +79,8 @@
                     </div>
                     <button><img src="/svg/search-outline.svg" alt="icon search"></button>
                 </form>
-    </section>
-        <section class="section-city">
+            </section>
+    <section class="section-city">
             <div>
                 <h2>Voyagez en France</h2>
                 <h4>Pourquoi pas ici ?</h4>
@@ -162,9 +167,7 @@
                 <hr>
             </div> 
         </div>
-        
         <p class="footer-left">© 2022 All rights reserved.</p>
-
     </footer>
 
     <script src="/js/script.js"></script>

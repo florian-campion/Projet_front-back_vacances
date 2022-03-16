@@ -115,9 +115,13 @@ input[type=checked]:checked {
 .blockHouse {
   display: flex;
   flex-direction: column;
-  margin-top: 30px;
   width: 65%;
   height: auto;
+}
+
+.blockHouse a {
+  text-decoration: none;
+  color: black;
 }
 
 /* New House */
@@ -169,7 +173,7 @@ h5 {
 
 .price {
   font-size: 35px;
-  line-height: .8;
+  line-height: 1;
   font-weight: bolder;
 }
 
