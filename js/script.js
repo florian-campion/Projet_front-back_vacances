@@ -1,69 +1,178 @@
-fetch('http://192.168.43.152:1337/api/catalogues?pagination[pageSize]=30')
-	.then(res => res.json())
-	.then(res2 => {
-		const corps = document.querySelector(".blockHouse")
-		res2.data.forEach((e)=>{
-  			corps.innerHTML += `
-              <a href="produit.html">
+/*import res = require("express/lib/response");*/
+
+fetch(
+  "http://192.168.43.152:1337/api/catalogues?pagination[pageSize]=30&populate=*"
+)
+  .then((res) => res.json())
+  .then((res2) => {
+    const corps2 = document.querySelector(".produit");
+    const corps = document.querySelector(".blockHouse");
+    console.log(window.location.search.split("=")[1]);
+    if (window.location.pathname === "/html/recherche.html") {
+      let count = 0;  
+      res2.data.forEach((e) => {
+        corps.innerHTML += `
+              <a href="produit.html?id=${e.id}">
               <div class="newHouse">
-                  <img src="/img/travel1.jpg" alt="voyage">
+              <img src="http://192.168.43.152:1337${e.attributes.Photo.data?.attributes.url}"></img>
                   <div class="description">
                       <div class="dColumn">
-                          <h5>${e.attributes['Nom']}</h5>
-                          <p>${e.attributes['Description']}</p>
+                          <h3>${e.attributes["Nom"]}</h3>
+                          <h4>${e.attributes["Secteur"]}</h4>
+                          <p>${e.attributes["Description"]}</p>
                       </div>
-                      <div class="dColumn">
-                          <p class="price">3000€ <br> <span>/ semaine</span></p>
-                          <p>4 pers</p>
+                      <div class="dColumn" id="${count}">
+                          <p>${e.attributes["Ch"]} Chambres</p>
                       </div>
                   </div>
+              </div> 
+              </a>`;
+              let inf = document.getElementById(`${count}`);
+              let D = new Date();
+              let mois = D.getMonth() + 1 ;
+              
+              if (e.attributes["Categorie"] === "Montagne") {
+                  
+                    if( 9 <= mois && mois <= 11 ) {
+                        console.log(mois)
+                        inf.innerHTML += `
+                        <p class="price">Bas : ${e.attributes["Bas"]}€ <br> <span>semaine</span></p>
+                        `
+                    } else if ( 4 <= mois && mois <= 6) {
+                        inf.innerHTML += `
+                        <p class="price">Moyen : ${e.attributes["Moyen"]}€ <br> <span>semaine</span></p>
+                        `
+                    }else {
+                        inf.innerHTML += `
+                        <p class="price">Haut : ${e.attributes["Haut"]}€ <br> <span>semaine</span></p>
+                        `
+                    }
+        
+              } else {
+        
+                    if( 10 <= mois && mois <= 12 || 1 <= mois && mois <= 4) {
+                        inf.innerHTML += `
+                        <p class="price">Bas : ${e.attributes["Bas"]}€ <br> <span>semaine</span></p>
+                        `
+                    } else if (5 <= mois && mois <= 6 || 9 === mois) {
+                        inf.innerHTML += `
+                        <p class="price">Moyen : ${e.attributes["Moyen"]}€ <br> <span>semaine</span></p>
+                        `
+                    } else {
+                        inf.innerHTML += `
+                        <p class="price">Haut : ${e.attributes["Haut"]}€ <br> <span>semaine</span></p>
+                        `
+                    }
+        
+              } 
+             
+            count++; 
+      });
+
+    } else if (window.location.pathname === "/html/produit.html") {
+      res2.data.forEach((e) => {
+        if (e.id.toString() === window.location.search.split("=")[1]) {
+          corps2.innerHTML += ` 
+      
+          <div class="caroussel">
+              <img src="http://192.168.43.152:1337${e.attributes.Photo.data?.attributes.url}" alt="">
+          </div>
+          <div class="fiche">
+              <h3 class="glamore">${e.attributes["Nom"]}</h3>
+              <div class="details">
+                  <div>
+                      <p>${e.attributes["M2"]} m²</p>
+                      <p>${e.attributes["Ch"]} chambres</p>
+                  </div>
+                  <div class="nb-personne">
+                      <p>${e.attributes["Type"]}</p>
+                  </div>
               </div>
-              </a>`
-		})
-	})
+              <div>
+                  <h6 class="glamore ">Equipements :</h6>
+                  <div class="equipement">
+                          
+                  </div>
+              </div>
+                  
+              <p>${e.attributes["Description"]}</p>
+              <div class="fiche-end">
+                  <div>
+                      <p class="fiche-price">${e.attributes["Bas"]}€</p>
+                      <p>/ semaine</p>
+                  </div>
+                  <div class="avis">
 
-// Menu 
-const menu = document.querySelector('#buttonMenu');
-const profil = document.querySelector('#buttonProfil');
+                  </div>
+                  <button class="btn-reservation">Réservation</button>
+              </div>
+          </div>
+                `;
+        
+        const eq = document.querySelector(".equipement");
+        console.log(e.attributes["Equipements"].data)
+        e.attributes["Equipements"].data.forEach((el)=>{
+            console.log(el)
+            eq.innerHTML += `
+            <div class="equipement-column">
+                <p>${el.attributes.Name}</p>
+                <hr class="hr-equipement">
+            </div>
+                
+            `
+        })
+        }
+      });
+    }
+  });
 
-menu.addEventListener('click', openMenu);
-profil.addEventListener('click', openConnexion);
+// Menu
+const menu = document.querySelector("#buttonMenu");
+const profil = document.querySelector("#buttonProfil");
+
+menu.addEventListener("click", openMenu);
+profil.addEventListener("click", openConnexion);
 
 function openMenu() {
-	const showMenu = document.querySelector('.menuDesk');
-	showMenu.classList.toggle('displayFlex');
+  const showMenu = document.querySelector(".menuDesk");
+  showMenu.classList.toggle("displayFlex");
 }
 
 function openConnexion() {
-	const showConnexion = document.querySelector('.formDesk');
-	showConnexion.classList.toggle('activeProfil');
+  const showConnexion = document.querySelector(".formDesk");
+  showConnexion.classList.toggle("activeProfil");
 }
 
-mobiscroll.datepicker('#demo-booking-multiple', {
-    controls: ['calendar', 'timegrid'],
-    min: '2022-03-16T00:00',
-    max: '2022-09-16T00:00',
-    minTime: '08:00',
-    maxTime: '19:59',
-    stepMinute: 60,
-    // example for today's labels and invalids
-    labels: [{
-        start: '2022-03-16',
-        textColor: '#e1528f',
-        title: '1 SPOTS'
-    }],
-    invalid: [{
-        start: '2022-03-16T08:00',
-        end: '2022-03-16T13:00'
-    }, {
-        start: '2022-03-16T15:00',
-        end: '2022-03-16T17:00'
-    }, {
-        start: '2022-03-16T19:00',
-        end: '2022-03-16T20:00'
-    }]
+mobiscroll.datepicker("#demo-booking-multiple", {
+  controls: ["calendar", "timegrid"],
+  min: "2022-03-16T00:00",
+  max: "2022-09-16T00:00",
+  minTime: "08:00",
+  maxTime: "19:59",
+  stepMinute: 60,
+  // example for today's labels and invalids
+  labels: [
+    {
+      start: "2022-03-16",
+      textColor: "#e1528f",
+      title: "1 SPOTS",
+    },
+  ],
+  invalid: [
+    {
+      start: "2022-03-16T08:00",
+      end: "2022-03-16T13:00",
+    },
+    {
+      start: "2022-03-16T15:00",
+      end: "2022-03-16T17:00",
+    },
+    {
+      start: "2022-03-16T19:00",
+      end: "2022-03-16T20:00",
+    },
+  ],
 });
-
 
 // let currentMonth = new Date().getMonth();
 // let currentYear = new Date().getFullYear();
@@ -79,7 +188,6 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // let dayNames = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
 // let bookedDates = [];
 // let selectedDates = [];
-
 
 // Date.prototype.addDays = function(days) {
 // 	let dat = new Date(this.valueOf())
@@ -115,7 +223,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // }
 // function validateForm() {
 // 	let formValidated = true;
-	
+
 // 	if($("#form-name").val() == "" || $("#form-name").val() == null) {
 // 		$("#form-name").addClass("formError");
 // 		formValidated = false;
@@ -123,7 +231,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // 	else {
 // 		$("#form-name").removeClass("formError");
 // 	}
-	
+
 // 	if($("#form-number").val() == "" || $("#form-number").val() == null) {
 // 		$("#form-number").addClass("formError");
 // 		formValidated = false;
@@ -131,7 +239,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // 	else {
 // 		$("#form-number").removeClass("formError");
 // 	}
-	
+
 // 	if($("#form-email").val() == "" || $("#form-email").val() == null) {
 // 		$("#form-email").addClass("formError");
 // 		formValidated = false;
@@ -139,7 +247,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // 	else {
 // 		$("#form-email").removeClass("formError");
 // 	}
-	
+
 // 	if($("#form-guests").val() == "" || $("#form-guests").val() == null) {
 // 		$("#form-guests").addClass("formError");
 // 		formValidated = false;
@@ -147,7 +255,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // 	else {
 // 		$("#form-guests").removeClass("formError");
 // 	}
-	
+
 // 	return formValidated;
 // }
 
@@ -165,11 +273,10 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // function clearBooking() {
 // 	$("#booking-form input").val("");
 // 	$("#booking-form textarea").val("");
-	
+
 // 	$("#booking-wrapper").removeClass("opened");
 // 	$("#make-booking").html("MAKE BOOKING ENQUIRY");
-	
-	
+
 // }
 
 // function daysInMonth(month) {
@@ -283,7 +390,7 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // $("#make-booking").on("click", function() {
 // 	if(selectedDates != null && selectedDates.length > 0) {
 // 		bookingSteps += 1;
-		
+
 // 		if(bookingSteps == 1) {
 // 			$("#booking-wrapper").addClass("opened");
 // 			$("#make-booking").html("SUBMIT ENQUIRY");
@@ -299,5 +406,3 @@ mobiscroll.datepicker('#demo-booking-multiple', {
 // 		}
 // 	}
 // });
-
-

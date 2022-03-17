@@ -26,35 +26,46 @@
             </ul>
         </nav>
     </header>
+
+    <header class="mobNav">
+        <div class="logo">
+            <img src="/img/logoMobile.png" alt="logo">
+        </div>
+        <div class="iconNav">
+            <img src="/svg/person-circle-outline.svg" alt="icon profil">
+            <img src="/svg/menu-outline.svg" alt="icon menu">
+        </div>
+    </header>
+
         <main>
             <section class="search">
                 <form class="search-bar">
-                    <div class="column q1">
+                    <div class="q1 column">
                         <label for="where">Où aller-vous ?</label>
                         <input type="text">
                     </div>
-                    <div class="column depart">
-                        <label for="departure">Départ</label>
-                        <input type="date">
-                    </div>
-                    <div class="column arrival">
-                        <label for="arrival">Arrivé</label>
-                        <input type="date">
-                    </div>
-                    <div class="column">
-                        <label for="adult">Adultes</label>
-                        <input type="number">
-                    </div>
-                    <div class="column">
-                        <label for="children">Enfants</label>
-                        <input type="number">
-                    </div>
-                    <div class="column">
-                        <label for="bedroom">Chambres</label>
-                        <input type="number">
-                    </div>
-                    <button><img src="/svg/search-outline.svg" alt="icon search"></button>
-                </form>
+                        <div class="flexBar">
+                            <div class="column">
+                                <label for="departure">Arrivé</label>
+                                <input type="date">
+                            </div>
+                            <div class="column">
+                                <label for="arrival">Départ</label>
+                                <input type="date">
+                            </div>
+                        </div>
+                        <div class="flexBar">
+                            <div class="column">
+                                <label for="adult">Personnes</label>
+                                <input type="number">
+                            </div>
+                            <div class="column">
+                                <label for="bedroom">Chambres</label>
+                                <input type="number">
+                            </div>
+                        </div>
+                        <button><img src="/svg/search-outline.svg" alt="icon search"></button>
+                    </form>
             </section>
 
             <section class="houseSearch"> 

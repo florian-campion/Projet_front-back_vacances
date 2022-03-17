@@ -5,13 +5,11 @@ const produit = document.querySelector('.produit');
 const closeWindows = document.querySelector('#close');
 const thanks = document.querySelector('.thanks')
 
-
+console.log(btnReservation)
 
 btnReservation.addEventListener('click', (e) => {
     produit.style.display = 'none';
     booking.style.display = 'block';
-
-    
 });
 
 closeWindows.addEventListener('click', (e) => {

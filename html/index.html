@@ -28,7 +28,7 @@
     
     <header class="mobNav">
         <div class="logo">
-            <img src="/img/logo.png" alt="logo">
+            <img src="/img/logoMobile.png" alt="logo">
         </div>
         <div class="iconNav">
             <img src="/svg/person-circle-outline.svg" alt="icon profil">
@@ -53,29 +53,29 @@
         </div>
         <section class="main-img">
             <form class="search-bar">
-                <div class="column q1">
+                <div class="q1 column">
                     <label for="where">Où aller-vous ?</label>
                     <input type="text">
                 </div>
-                    <div class="column depart">
-                        <label for="departure">Arrivé</label>
-                        <input type="date">
+                    <div class="flexBar">
+                        <div class="column">
+                            <label for="departure">Arrivé</label>
+                            <input type="date">
+                        </div>
+                        <div class="column">
+                            <label for="arrival">Départ</label>
+                            <input type="date">
+                        </div>
                     </div>
-                    <div class="column arrival">
-                        <label for="arrival">Départ</label>
-                        <input type="date">
-                    </div>
-                    <div class="column">
-                        <label for="adult">Adultes</label>
-                        <input type="number">
-                    </div>
-                    <div class="column">
-                        <label for="children">Enfants</label>
-                        <input type="number">
-                    </div>
-                    <div class="column">
-                        <label for="bedroom">Chambres</label>
-                        <input type="number">
+                    <div class="flexBar">
+                        <div class="column">
+                            <label for="adult">Personnes</label>
+                            <input type="number">
+                        </div>
+                        <div class="column">
+                            <label for="bedroom">Chambres</label>
+                            <input type="number">
+                        </div>
                     </div>
                     <button><img src="/svg/search-outline.svg" alt="icon search"></button>
                 </form>
@@ -160,16 +160,15 @@
             </div>
             <div class="footer-link">
                 <p><a href="#">Privacy policy</a></p>
-                <hr>
+                <hr class="footer-hr-long">
             </div>
             <div class="footer-link">
                 <p><a href="#">Cookie policy </a></p>
-                <hr>
+                <hr class="footer-hr-long">
             </div> 
         </div>
         <p class="footer-left">© 2022 All rights reserved.</p>
     </footer>
-
     <script src="/js/script.js"></script>
 </body>
 </html>
