@@ -949,6 +949,9 @@ textarea.formError, input.formError {
     color: #DCB253;
 }
 
+.failed {
+    display: none;
+}
 
 /* Media Queries */
 

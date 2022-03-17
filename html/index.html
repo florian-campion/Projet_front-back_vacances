@@ -22,6 +22,7 @@
                 <li><a href="/html/recherche.html">Recherche</a></li>
                 <li><a href="/html/administrateur.html">Administrateurs</a></li>
                 <li><a href="/html/profil.html">Profil</a></li>
+                <li><button class="disconnect">Déconnexion</button></li>
             </ul>
         </nav>
     </header>
@@ -38,16 +39,17 @@
 
     <main>
         <div class="absolute">
-            <form action="/html/profil.html" class="formDesk">
+            <form class="formDesk">
                 <div>
                     <h1>Les Vacances de gustave</h1>
-                    <label for="">Adress email
-                    <input type="email" id="identifier">
+                    <label for="">Adresse email
+                    <input type="email" class="identifier">
                     </label>
                     <label for="">Mot de passe
-                    <input type="password" id="password">
+                    <input type="password" class="password">
                     </label>
-                    <button type="submit" class="connex">Connexion</button>
+                    <input type="submit" class="connex" value="Connexion">
+                    <p class="failed">Email ou mot de passe incorrect.</p>
                 </div>
             </form>
         </div>
@@ -171,5 +173,6 @@
     </footer>
 
     <script src="/js/script.js"></script>
+    <script src="/js/login.js"></script>
 </body>
 </html>
